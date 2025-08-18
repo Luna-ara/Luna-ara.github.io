@@ -1,25 +1,30 @@
-html, body {
-    background-color: #f8f0f0; 
+html,
+body {
+    background-color: #f8f0f0;
 
 
 }
+
 .typing {
-    font-size:  30px;
+    font-size: 30px;
     margin-top: 10px;
 }
-p{
-    color:#333333; 
+
+p {
+    color: #333333;
     font-size: 30px;
     font-family: 'DM Sans';
     text-align: center;
 
 }
-b{
+
+b {
     font-size: 3em;
     font-weight: bold;
     margin-top: 10px;
 
 }
+
 
 header {
     background-color: #fff;
@@ -29,16 +34,23 @@ header {
     z-index: 100;
 }
 
+header .container {
+    justify-content: center;
+    display: flex;
+}
+
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px 0;
 }
+
 .nav-links {
     display: flex;
     gap: 30px;
 }
+
 .nav-links a {
     text-decoration: none;
     color: #2c3e50;
@@ -47,6 +59,7 @@ nav {
     padding: 5px 10px;
     border-radius: 5px;
 }
+
 .nav-links a:hover {
     color: #3498db;
     background-color: #f5f5f5;
@@ -61,25 +74,33 @@ nav {
     height: 700px;
     margin: auto;
     text-align: center;
-    
+
 }
-#Home,#About,#Projects,#Education, #Contact ,#Experience{
-    background-color: #f8f0f0;  
-    height: 800px;               
+
+#Home,
+#About,
+#Projects,
+#Education,
+#Contact,
+#Experience {
+    background-color: #f8f0f0;
+    height: 800px;
     font-family: 'DM Sans', sans-serif;
     text-align: center;
     text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.2);
     color: #333333;
-     
+
 }
-#Home img{
-    
-    width:200px;
-    height:200px;
+
+#Home img {
+
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
-    margin: 20px;  
+    margin: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+
 #Home .link img {
     width: 50px;
     height: 50px;
@@ -87,81 +108,107 @@ nav {
     transition: transform 0.3s;
 }
 
-.btn{
+.btn {
     display: inline-block;
     padding: 10px 20px;
     font-size: 16px;
     font-weight: bold;
-    color: black; 
+    color: black;
     border: 1px solid black;
-    border-radius: 5px; 
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); 
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
     text-align: center;
 
 }
 
 .caption-container {
-    font-size: 2rem;  
-    font-weight:bold;   
+    font-size: 2rem;
+    font-weight: bold;
     color: #2C3E50;
-    padding: 10px;                       
-    text-align: center; 
+    padding: 10px;
+    text-align: center;
     font-family: 'Roboto';
     background-color: white;
 }
 
-.textsection{
-    background-color:#fae0e4; 
+.textsection {
+    background-color: #fae0e4;
     height: 100vh;
-    
+
 }
 
 #About {
-    background-color:  #f8f0f0;
+    background-color: #f8f0f0;
 }
+
+.header-text {
+    white-space: nowrap;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.line {
+    width: 100%;
+    margin: 0 auto;
+    border-top: 2px solid rgba(17, 15, 15, 0.129);
+}
+
+.image-row {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
 .image-box {
     background-color: rgba(244, 200, 207, 0.23);
     padding: 15px;
     border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    max-width: 60%;
+    max-width: 80%;
     margin: 20px auto;
     display: flex;
     gap: 15px;
     flex-wrap: wrap;
-  }
-  
-  .image-box img {
-    max-width: 60px;
+    flex-direction: column;
+}
+
+.image-box img {
+    max-width: 90px;
     height: auto;
-  }
-  .image-box .container{
+}
+
+.image-box .container {
     border-bottom-style: solid;
     border-width: 1px;
     border-color: rgba(0, 0, 0, 0.549);
     text-align: left;
-  }
-
-.contact-icons img{
-    height:50px;
-    width: 50px;
-    align-items: left; 
-  }
-.contact-icons{
-  display: flex;
-  flex-direction: column; 
-  align-items:flex-start; 
-  gap: 30px; 
 }
-.contact-icons :hover{
+
+
+.contact-icons img {
+    height: 50px;
+    width: 50px;
+    align-items: left;
+}
+
+.contact-icons {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+.contact-icons :hover {
     transform: scale(1.1);
 }
-.link{
-    color:gray; 
+
+
+.link {
+    color: gray;
     text-decoration: none;
     font-size: 20px;
 }
-        
+
 .project-card {
     background-color: #fff;
     border-radius: 10px;
@@ -174,9 +221,10 @@ nav {
 
 .project-image {
     width: 100%;
-    height:300px;
+    height: 300px;
     overflow: hidden;
 }
+
 .project-image img {
     width: 100%;
     height: 100%;
@@ -229,7 +277,3 @@ nav {
     color: #3498db;
     font-weight: 500;
 }
-
-  
-
-
