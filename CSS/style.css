@@ -1,6 +1,7 @@
 html,
 body {
     background-color: #f8f0f0;
+    margin-top: 0px;
 
 
 }
@@ -127,7 +128,7 @@ nav {
     color: #2C3E50;
     padding: 10px;
     text-align: center;
-    font-family: 'Roboto';
+    font-family: 'DM Sans';
     background-color: white;
 }
 
@@ -162,18 +163,18 @@ nav {
 .image-box {
     background-color: rgba(244, 200, 207, 0.23);
     padding: 15px;
-    border-radius: 20px;
+    border-radius: 30px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    max-width: 80%;
+    /* max-width: 80%; */
     margin: 20px auto;
     display: flex;
-    gap: 15px;
+    /* gap: 15px; */
     flex-wrap: wrap;
     flex-direction: column;
 }
 
 .image-box img {
-    max-width: 90px;
+    max-width: 120px;
     height: auto;
 }
 
@@ -210,7 +211,7 @@ nav {
 }
 
 .project-card {
-    background-color: #fff;
+    background-color: #fff6f0;
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
