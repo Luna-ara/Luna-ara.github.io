@@ -2,7 +2,7 @@
 #  Portfolio 🌙 
 
 Welcome to my personal portfolio website!  
-This project showcases my work, skills, and creative projects — built to share my journey in tech and design.
+This project showcases my work, skills, and creative projects.
 
 ## 🖥️ Live Website
 👉 [View it here](https://luna-ara.github.io)
