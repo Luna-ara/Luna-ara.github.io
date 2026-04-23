@@ -26,13 +26,15 @@
     <main>
         <!-- Home Section -->
         <section id="Home">
-            <div class="container">
+            <div class="container reveal">
                 <img src="CSS/Img/cpp_logo.png" alt="Araceli Luna" width="180" height="180" /> <!-- Replace with actual profile picture -->
                 <h1>Hi, I'm Araceli Luna.</h1>
-                <span class="typing"></span>
+                <div class="typing-wrapper">
+                    <span class="typing"></span>
+                </div>
                 <p>Eager to build efficient applications and derive insights from data.</p>
                 
-                <a href="#" class="btn" download>View Resume (Coming Soon)</a>
+                <a href="#" class="btn" download>View Resume </a>
                 
                 <div class="social-links">
                     <a href="mailto:lunaaracely50@gmail.com" target="_blank">
@@ -50,7 +52,7 @@
 
         <!-- About Section -->
         <section id="About">
-            <div class="container">
+            <div class="container reveal">
                 <h2>About Me</h2>
                 <div class="about-grid">
                     <div class="about-text">
@@ -92,31 +94,61 @@
 
         <!-- Projects Section -->
         <section id="Projects">
-            <div class="container">
+            <div class="container reveal">
                 <h2>Featured Projects</h2>
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="CSS/Img/EV.png" alt="Electric Vehicle Analysis">
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Electric Vehicle Analysis</h3>
-                        <p class="project-description">
-                            A comprehensive data analysis exploring cost, CO2 emissions, and sales trends 
-                            to determine the most efficient and eco-friendly vehicle options.
-                        </p>
-                        <div class="project-tags">
-                            <span class="project-tag">Python</span>
-                            <span class="project-tag">Data Analysis</span>
+                <div class="carousel-container">
+                    <button class="carousel-btn prev" id="prevBtn">&lt;</button>
+                    <div class="carousel-track-container">
+                        <div class="carousel-track">
+                            <!-- Project 1 -->
+                            <div class="project-card carousel-item active">
+                                <div class="project-image">
+                                    <img src="CSS/Img/EV.png" alt="Electric Vehicle Analysis">
+                                </div>
+                                <div class="project-content">
+                                    <h3 class="project-title">Electric Vehicle Analysis</h3>
+                                    <p class="project-description">
+                                        A comprehensive data analysis exploring cost, CO2 emissions, and sales trends 
+                                        to determine the most efficient and eco-friendly vehicle options.
+                                    </p>
+                                    <div class="project-tags">
+                                        <span class="project-tag">Python</span>
+                                        <span class="project-tag">Data Analysis</span>
+                                    </div>
+                                    <a href="https://github.com/luna-ara" class="btn">View Code</a>
+                                </div>
+                            </div>
+
+                            <!-- Project 2 -->
+                            <div class="project-card carousel-item">
+                                <div class="project-image">
+                                    <img src="CSS/Img/Grocers.png" alt="Grocers Price Comparison">
+                                </div>
+                                <div class="project-content">
+                                    <h3 class="project-title">Grocers</h3>
+                                    <p class="project-description">
+                                        A smart price-comparison tool that helps users save money by comparing real-time grocery prices 
+                                        across major retailers like Kroger and Target based on selected recipes.
+                                    </p>
+                                    <div class="project-tags">
+                                        <span class="project-tag">Python/Flask</span>
+                                        <span class="project-tag">Selenium</span>
+                                        <span class="project-tag">REST APIs</span>
+                                        <span class="project-tag">JavaScript</span>
+                                    </div>
+                                    <a href="https://github.com/Luna-ara/Grocers" class="btn">View Code</a>
+                                </div>
+                            </div>
                         </div>
-                        <a href="https://github.com/luna-ara" class="btn">View Code</a>
                     </div>
+                    <button class="carousel-btn next" id="nextBtn">&gt;</button>
                 </div>
             </div>
         </section>
 
         <!-- Contact Section -->
         <section id="Contact">
-            <div class="container">
+            <div class="container reveal">
                 <h2>Get In Touch</h2>
                 <p>I'd love to hear from you about opportunities and collaborations.</p>
                 
@@ -150,6 +182,58 @@
             typeSpeed: 60,
             backSpeed: 30,
             backDelay: 2000,
+        });
+
+        // Carousel Logic
+        const track = document.querySelector('.carousel-track');
+        const items = Array.from(track.children);
+        const nextBtn = document.getElementById('nextBtn');
+        const prevBtn = document.getElementById('prevBtn');
+        
+        let currentIndex = 0;
+
+        function updateCarousel() {
+            const amountToMove = items[currentIndex].offsetWidth;
+            track.style.transform = 'translateX(-' + (currentIndex * amountToMove) + 'px)';
+            
+            // Update active class
+            items.forEach((item, index) => {
+                if (index === currentIndex) {
+                    item.classList.add('active');
+                } else {
+                    item.classList.remove('active');
+                }
+            });
+        }
+
+        nextBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % items.length;
+            updateCarousel();
+        });
+
+        prevBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + items.length) % items.length;
+            updateCarousel();
+        });
+
+        // Handle window resize
+        window.addEventListener('resize', updateCarousel);
+
+        // Scroll Reveal Logic
+        const revealCallback = (entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        };
+
+        const revealObserver = new IntersectionObserver(revealCallback, {
+            threshold: 0.15
+        });
+
+        document.querySelectorAll('.reveal').forEach(element => {
+            revealObserver.observe(element);
         });
     </script>
 </body>
