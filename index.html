@@ -5,19 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Araceli Luna | Portfolio</title>
     <link rel="stylesheet" href="CSS/style.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    
     
     <header>
         <div class="container">
             <nav>
                 <div class="nav-links">
+                    <div class="nav-slider"></div>
                     <a href="#Home">Home</a>
                     <a href="#About">About</a>
                     <a href="#Projects">Projects</a>
                     <a href="#Contact">Contact</a>
-                    <a href="#resume">Resume</a>
                 </div>
             </nav>
         </div>
@@ -27,24 +28,26 @@
         <!-- Home Section -->
         <section id="Home">
             <div class="container reveal">
-                <img src="CSS/Img/cpp_logo.png" alt="Araceli Luna" width="180" height="180" /> <!-- Replace with actual profile picture -->
+                <img src="CSS/Img/cpp_logo.png" alt="Araceli Luna" /> 
                 <h1>Hi, I'm Araceli Luna.</h1>
                 <div class="typing-wrapper">
                     <span class="typing"></span>
                 </div>
                 <p>Eager to build efficient applications and derive insights from data.</p>
                 
-                <a href="#" class="btn" download>View Resume </a>
                 
                 <div class="social-links">
-                    <a href="mailto:lunaaracely50@gmail.com" target="_blank">
-                        <img src="CSS/Img/mail_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png" alt="Email" width="32" height="32" />
+                    <a href="mailto:lunaaracely50@gmail.com" target="_blank" class="contact-item">
+                        <img src="CSS/Img/mail_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png" alt="Email" />
+                        <div>Email</div>
                     </a>
-                    <a href="https://github.com/luna-ara" target="_blank">
-                        <img src="CSS/Img/icons8-github-glyph-neue-96.png" alt="Github" width="32" height="32" />
+                    <a href="https://github.com/luna-ara" target="_blank" class="contact-item">
+                        <img src="CSS/Img/icons8-github-glyph-neue-96.png" alt="Github" />
+                        <div>GitHub</div>
                     </a>
-                    <a href="https://www.linkedin.com/in/aracely-luna-20540725b" target="_blank">
-                        <img src="CSS/Img/circle-linkedin-512.webp" alt="LinkedIn" width="32" height="32" />
+                    <a href="https://www.linkedin.com/in/aracely-luna-20540725b" target="_blank" class="contact-item">
+                        <img src="CSS/Img/circle-linkedin-512.webp" alt="LinkedIn" />
+                        <div>LinkedIn</div>
                     </a>
                 </div>
             </div>
@@ -52,7 +55,7 @@
 
         <!-- About Section -->
         <section id="About">
-            <div class="container reveal">
+            <div class="container reveal white-card">
                 <h2>About Me</h2>
                 <div class="about-grid">
                     <div class="about-text">
@@ -96,52 +99,47 @@
         <section id="Projects">
             <div class="container reveal">
                 <h2>Featured Projects</h2>
-                <div class="carousel-container">
-                    <button class="carousel-btn prev" id="prevBtn">&lt;</button>
-                    <div class="carousel-track-container">
-                        <div class="carousel-track">
-                            <!-- Project 1 -->
-                            <div class="project-card carousel-item active">
-                                <div class="project-image">
-                                    <img src="CSS/Img/EV.png" alt="Electric Vehicle Analysis">
-                                </div>
-                                <div class="project-content">
-                                    <h3 class="project-title">Electric Vehicle Analysis</h3>
-                                    <p class="project-description">
-                                        A comprehensive data analysis exploring cost, CO2 emissions, and sales trends 
-                                        to determine the most efficient and eco-friendly vehicle options.
-                                    </p>
-                                    <div class="project-tags">
-                                        <span class="project-tag">Python</span>
-                                        <span class="project-tag">Data Analysis</span>
-                                    </div>
-                                    <a href="https://github.com/luna-ara" class="btn">View Code</a>
-                                </div>
+                <div class="projects-list">
+                    <!-- Project 1 -->
+                    <div class="project-card reveal">
+                        <div class="project-image">
+                            <img src="CSS/Img/EV.png" alt="Electric Vehicle Analysis">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Electric Vehicle Analysis</h3>
+                            <p class="project-description">
+                                A comprehensive data analysis exploring cost, CO2 emissions, and sales trends 
+                                to determine the most efficient and eco-friendly vehicle options.
+                            </p>
+                            <div class="project-tags">
+                                <span class="project-tag">Python</span>
+                                <span class="project-tag">Data Analysis</span>
+                                <span class="project-tag">Matplotlib</span>
                             </div>
-
-                            <!-- Project 2 -->
-                            <div class="project-card carousel-item">
-                                <div class="project-image">
-                                    <img src="CSS/Img/Grocers.png" alt="Grocers Price Comparison">
-                                </div>
-                                <div class="project-content">
-                                    <h3 class="project-title">Grocers</h3>
-                                    <p class="project-description">
-                                        A smart price-comparison tool that helps users save money by comparing real-time grocery prices 
-                                        across major retailers like Kroger and Target based on selected recipes.
-                                    </p>
-                                    <div class="project-tags">
-                                        <span class="project-tag">Python/Flask</span>
-                                        <span class="project-tag">Selenium</span>
-                                        <span class="project-tag">REST APIs</span>
-                                        <span class="project-tag">JavaScript</span>
-                                    </div>
-                                    <a href="https://github.com/Luna-ara/Grocers" class="btn">View Code</a>
-                                </div>
-                            </div>
+                            <a href="https://github.com/luna-ara" class="btn">View Project</a>
                         </div>
                     </div>
-                    <button class="carousel-btn next" id="nextBtn">&gt;</button>
+
+                    <!-- Project 2 -->
+                    <div class="project-card reveal">
+                        <div class="project-image">
+                            <img src="CSS/Img/Grocers.png" alt="Grocers Price Comparison">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Grocers</h3>
+                            <p class="project-description">
+                                A smart price-comparison tool that helps users save money by comparing real-time grocery prices 
+                                across major retailers like Kroger and Target based on selected recipes.
+                            </p>
+                            <div class="project-tags">
+                                <span class="project-tag">Python/Flask</span>
+                                <span class="project-tag">Selenium</span>
+                                <span class="project-tag">REST APIs</span>
+                                <span class="project-tag">JavaScript</span>
+                            </div>
+                            <a href="https://github.com/Luna-ara/Grocers" class="btn">View Project</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -150,8 +148,6 @@
         <section id="Contact">
             <div class="container reveal">
                 <h2>Get In Touch</h2>
-                <p>I'd love to hear from you about opportunities and collaborations.</p>
-                
                 <div class="contact-grid">
                     <a href="mailto:lunaaracely50@gmail.com" class="contact-item">
                         <img src="CSS/Img/mail_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png" alt="Email" />
@@ -171,53 +167,29 @@
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
     <script>
+        // 3D Tilt Effect
+        VanillaTilt.init(document.querySelectorAll(".project-card"), {
+            max: 10,
+            speed: 400,
+            glare: true,
+            "max-glare": 0.2,
+            perspective: 1000,
+            scale: 1.02
+        });
+
         var typed = new Typed(".typing", {
             strings: [
                 "Data Enthusiast",
                 "Software Developer",
-                "Fast Learner"
+                "Computer Science Student"
             ],
             loop: true,
             typeSpeed: 60,
             backSpeed: 30,
             backDelay: 2000,
         });
-
-        // Carousel Logic
-        const track = document.querySelector('.carousel-track');
-        const items = Array.from(track.children);
-        const nextBtn = document.getElementById('nextBtn');
-        const prevBtn = document.getElementById('prevBtn');
-        
-        let currentIndex = 0;
-
-        function updateCarousel() {
-            const amountToMove = items[currentIndex].offsetWidth;
-            track.style.transform = 'translateX(-' + (currentIndex * amountToMove) + 'px)';
-            
-            // Update active class
-            items.forEach((item, index) => {
-                if (index === currentIndex) {
-                    item.classList.add('active');
-                } else {
-                    item.classList.remove('active');
-                }
-            });
-        }
-
-        nextBtn.addEventListener('click', () => {
-            currentIndex = (currentIndex + 1) % items.length;
-            updateCarousel();
-        });
-
-        prevBtn.addEventListener('click', () => {
-            currentIndex = (currentIndex - 1 + items.length) % items.length;
-            updateCarousel();
-        });
-
-        // Handle window resize
-        window.addEventListener('resize', updateCarousel);
 
         // Scroll Reveal Logic
         const revealCallback = (entries, observer) => {
@@ -229,11 +201,31 @@
         };
 
         const revealObserver = new IntersectionObserver(revealCallback, {
-            threshold: 0.15
+            threshold: 0.1
         });
 
         document.querySelectorAll('.reveal').forEach(element => {
             revealObserver.observe(element);
+        });
+
+       
+
+        
+
+        // Nav Slider Logic
+        const navSlider = document.querySelector(".nav-slider");
+        const navLinks = document.querySelectorAll(".nav-links a");
+
+        navLinks.forEach(link => {
+            link.addEventListener("mouseenter", () => {
+                navSlider.style.opacity = "1";
+                navSlider.style.width = `${link.offsetWidth}px`;
+                navSlider.style.left = `${link.offsetLeft}px`;
+            });
+        });
+
+        document.querySelector(".nav-links").addEventListener("mouseleave", () => {
+            navSlider.style.opacity = "0";
         });
     </script>
 </body>
