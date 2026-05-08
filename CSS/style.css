@@ -40,8 +40,6 @@ body {
     line-height: 1.6;
     font-size: 16px;
     min-height: 100vh;
-   
-
 }
 
 /* Layout Containers */
@@ -90,7 +88,7 @@ header {
     background: transparent;
     position: fixed;
     width: 100%;
-    top: 20px; /* Gap from the top */
+    top: 20px;
     z-index: 1000;
     display: flex;
     justify-content: center;
@@ -108,6 +106,7 @@ nav {
     align-items: center;
     box-shadow: 0 10px 40px rgba(255, 77, 109, 0.08);
     transition: var(--transition);
+    position: relative;
 }
 
 .nav-links {
@@ -132,7 +131,7 @@ nav {
 .nav-slider {
     position: absolute;
     height: 100%;
-    background: rgba(255, 77, 109, 0.1); /* Soft pink background */
+    background: rgba(255, 77, 109, 0.1);
     border-radius: 100px;
     transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
     z-index: 0;
@@ -147,6 +146,41 @@ nav {
 header:hover nav {
     background: rgba(255, 255, 255, 0.9);
     transform: scale(1.02);
+}
+
+/* Hamburger Button */
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    z-index: 1001;
+}
+
+.nav-toggle span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--text);
+    border-radius: 2px;
+    transition: var(--transition);
+}
+
+.nav-toggle.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.nav-toggle.active span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+}
+
+.nav-toggle.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
 }
 
 /* Home Section */
@@ -188,7 +222,7 @@ header:hover nav {
 }
 
 .social-links .contact-item {
-    width: 100px; 
+    width: 100px;
     padding: 1.2rem 0.8rem;
     display: flex;
     flex-direction: column;
@@ -198,7 +232,7 @@ header:hover nav {
 
 .social-links .contact-item img {
     width: 30px;
-    height: 30px ;
+    height: 30px;
     margin-bottom: 0.5rem;
 }
 
@@ -246,14 +280,7 @@ header:hover nav {
     transform: scale(1.1);
 }
 
-@media (max-width: 992px) {
-    .about-grid {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-    }
-}
-
-/* Projects Section (Redesigned) */
+/* Projects Section */
 .projects-list {
     display: flex;
     flex-direction: column;
@@ -390,67 +417,199 @@ header:hover nav {
     transform: scale(1.05);
 }
 
-
-
-
-
+/* Scroll Reveal Styles */
+.reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.9s cubic-bezier(0.23, 1, 0.32, 1), transform 0.9s cubic-bezier(0.23, 1, 0.32, 1);
+}
 
 .reveal.active {
     opacity: 1;
     transform: translateY(0);
 }
 
-/* Mobile Responsive */
+/* Tablet (992px) */
 @media (max-width: 992px) {
-    .about-grid, .project-card {
+    .about-grid {
         grid-template-columns: 1fr;
         gap: 3rem;
     }
+
+    .project-card,
+    .project-card:nth-child(even) {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .project-card:nth-child(even) .project-image,
+    .project-card:nth-child(even) .project-content {
+        order: unset;
+    }
+
+    .project-card:nth-child(even) .project-content {
+        padding-left: 0;
+    }
+
     .project-image {
         height: 350px;
     }
+
     .project-content {
         padding-right: 0;
     }
+
     .white-card {
         padding: 4rem 2rem;
     }
 }
 
+/* Mobile (768px) */
 @media (max-width: 768px) {
+    header {
+        top: 12px;
+    }
+
+    nav {
+        padding: 10px 20px;
+        height: 52px;
+    }
+
+    .nav-toggle {
+        display: flex;
+    }
+
     .nav-links {
-        gap: 1.5rem;
+        display: none;
+        position: absolute;
+        top: calc(100% + 10px);
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(255, 255, 255, 0.97);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        border-radius: 20px;
+        padding: 0.75rem;
+        flex-direction: column;
+        gap: 0.25rem;
+        min-width: 160px;
+        box-shadow: 0 10px 40px rgba(255, 77, 109, 0.15);
+        border: 1px solid rgba(255, 255, 255, 0.5);
     }
-    h1 {
-        font-size: 3.5rem;
+
+    .nav-links.open {
+        display: flex;
     }
+
+    .nav-links a {
+        padding: 10px 20px;
+        text-align: center;
+        border-radius: 12px;
+    }
+
+    .nav-slider {
+        display: none;
+    }
+
+    header:hover nav {
+        transform: none;
+    }
+
+    section {
+        padding: 80px 0 60px;
+        min-height: auto;
+    }
+
+    #Home {
+        min-height: 100vh;
+        text-align: center;
+    }
+
+    #Home .container {
+        align-items: center;
+    }
+
+    h2 {
+        margin-bottom: 2.5rem;
+    }
+
+    .typing {
+        font-size: 1.5rem;
+    }
+
+    .white-card {
+        padding: 3rem 1.5rem;
+        border-radius: 30px;
+    }
+
+    .project-image {
+        height: 260px;
+    }
+
     .project-title {
-        font-size: 2.2rem;
+        font-size: 2rem;
+    }
+
+    .project-description {
+        font-size: 1rem;
+    }
+
+    .projects-list {
+        gap: 3.5rem;
+    }
+
+    .contact-grid {
+        gap: 1rem;
+    }
+
+    .contact-item {
+        width: 100%;
+        max-width: 280px;
+        padding: 1.5rem;
+    }
+
+    .btn {
+        padding: 1rem 2.5rem;
+        font-size: 1rem;
+    }
+
+    .social-links {
+        gap: 1rem;
+        justify-content: center;
     }
 }
-project-card {
-        grid-template-columns: 1fr;
-        gap: 3rem;
+
+/* Small Mobile (480px) */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 1.25rem;
     }
+
+    section {
+        padding: 70px 0 50px;
+    }
+
+    #Home .container > img {
+        width: 150px;
+        height: 150px;
+    }
+
     .project-image {
-        height: 350px;
+        height: 210px;
+        border-radius: 24px;
     }
-    .project-content {
-        padding-right: 0;
-    }
+
     .white-card {
-        padding: 4rem 2rem;
+        padding: 2.5rem 1.25rem;
+        border-radius: 24px;
     }
 
+    .social-links .contact-item {
+        width: 85px;
+        padding: 1rem 0.5rem;
+    }
 
-@media (max-width: 768px) {
-    .nav-links {
-        gap: 1.5rem;
-    }
-    h1 {
-        font-size: 3.5rem;
-    }
-    .project-title {
-        font-size: 2.2rem;
+    .image-row img {
+        height: 40px;
     }
 }
