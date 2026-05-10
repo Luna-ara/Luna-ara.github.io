@@ -247,7 +247,13 @@ header:hover nav {
     align-items: flex-start;
 }
 
-#Home .container > img {
+.home-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.home-card > img {
     width: 200px;
     height: 200px;
     border-radius: 40px;
@@ -781,4 +787,90 @@ header:hover nav {
 
 [data-theme="dark"] .project-tag {
     color: var(--primary);
+}
+
+/* Dark Mode Glass Card — Home Section */
+[data-theme="dark"] #Home {
+    justify-content: flex-start;
+    padding-top: 160px;
+}
+
+[data-theme="dark"] .home-card {
+    background: rgba(8, 5, 15, 0.60);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 110, 135, 0.18);
+    border-radius: 28px;
+    padding: 2.8rem 3.2rem;
+    max-width: 560px;
+    box-shadow:
+        0 8px 48px rgba(0, 0, 0, 0.55),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05),
+        0 0 0 1px rgba(255, 110, 135, 0.06) inset;
+}
+
+[data-theme="dark"] .home-card > img {
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    margin-bottom: 1.6rem;
+    box-shadow: none;
+    border: 1.5px solid rgba(255, 110, 135, 0.35);
+}
+
+[data-theme="dark"] .home-card h1 {
+    font-size: clamp(2rem, 6vw, 3.4rem);
+    margin-bottom: 1rem;
+}
+
+[data-theme="dark"] .home-card p {
+    font-size: 1rem;
+    margin-bottom: 0;
+    color: rgba(200, 190, 210, 0.7);
+}
+
+[data-theme="dark"] .home-card .social-links {
+    margin-top: 1.8rem;
+    gap: 0.75rem;
+}
+
+[data-theme="dark"] .home-card .social-links .contact-item {
+    width: auto;
+    padding: 0.5rem 1rem;
+    flex-direction: row;
+    gap: 0.45rem;
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(255, 110, 135, 0.2);
+    border-radius: 100px;
+}
+
+[data-theme="dark"] .home-card .social-links .contact-item img {
+    width: 16px;
+    height: 16px;
+    margin-bottom: 0;
+}
+
+[data-theme="dark"] .home-card .social-links .contact-item div {
+    font-size: 0.78rem;
+}
+
+/* Spider Lily Canvas Background */
+#spider-lily-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    display: none;
+    pointer-events: none;
+}
+
+[data-theme="dark"] #spider-lily-canvas {
+    display: block;
+}
+
+[data-theme="dark"] main {
+    position: relative;
+    z-index: 1;
 }
